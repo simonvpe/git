@@ -1,4 +1,4 @@
-package gitcommand
+package git
 
 import "os/exec"
 
