@@ -20,7 +20,7 @@ func gitFail(t *testing.T, dir string, args ...string) {
 		[]string {},
 		args...,
 	)
-	if _, err := git(dir, args...); err == nil {
+	if _, err := Run(dir, args...); err == nil {
 		t.Errorf("Expected git command to fail (git %#v)", arglist)
 	}
 }
@@ -31,7 +31,7 @@ func gitSuccess(t *testing.T, dir string, args ...string) []byte {
 		args...,
 	)
 
-	output, err := git(dir, args...)
+	output, err := Run(dir, args...)
 	if err != nil {
 		t.Errorf("Failed to run git command (git %#v)", arglist)
 	}
